@@ -8,3 +8,37 @@ body {
   background-color: white;
   font-family: "Hahmlet", serif;
 }
+
+/* --------------------------------------------------------------------- nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 10;
+  height: 60px;
+  background-color: #ffffff;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-menu li {
+  transition: 0.1s;
+}
+.nav-menu-item a {
+  font-family: "Hahmlet", serif;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+.nav-menu-item {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0 40px;
+  font-size: 18px;
+  transition: 0.2s;
+}
