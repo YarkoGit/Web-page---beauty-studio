@@ -10,35 +10,84 @@ body {
 }
 
 /* --------------------------------------------------------------------- nav */
-nav {
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;
-  z-index: 10;
-  height: 60px;
-  background-color: #ffffff;
 }
 
-.nav-menu {
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 80px;
+  line-height: 60px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.burger-icon {
+  display: block;
+  margin-left: auto;
+  padding: 0 30px;
+  line-height: 60px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo-button {
+  display: block;
+  height: 80px;
+  width: 80px;
+  padding: 10px 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../img/logo.JPG");
+  background-size: cover;
+  background-position: center;
+}
+
+.nav-items {
   display: none;
 }
 
-.nav-menu li {
-  transition: 0.1s;
-}
-.nav-menu-item a {
-  font-family: "Hahmlet", serif;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(0, 0, 0);
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
 }
 
-.nav-menu-item {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 0 40px;
-  font-size: 18px;
-  transition: 0.2s;
+/* --------------------------------------------------------------------------RWD */
+@media (min-width: 768px) {
+  .burger-icon {
+    display: none;
+  }
+
+  .logo-button {
+    margin-left: 0;
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-items a {
+    padding: 0 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    transition: 0.2s;
+  }
+  .nav-items a:hover {
+    transform: scale(1.1);
+  }
 }
