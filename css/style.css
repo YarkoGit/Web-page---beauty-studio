@@ -11,83 +11,113 @@ body {
 
 /* --------------------------------------------------------------------- nav */
 
-.wrapper {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 nav {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 16;
   height: 80px;
-  line-height: 60px;
   background-color: #ffffff;
   text-align: center;
+  box-shadow: 1px 1px 10px rgb(94, 94, 94);
 }
 
-.burger-icon {
-  display: block;
-  margin-left: auto;
+.burger {
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 0 30px;
   line-height: 60px;
   font-size: 30px;
   background: none;
   border: none;
   cursor: pointer;
+  transition: transform 0.4s;
+  z-index: 17;
 }
 
 .logo-button {
-  display: block;
-  height: 80px;
+  height: 76px;
   width: 80px;
-  padding: 10px 0;
+  margin-top: 3px;
+  margin-bottom: 3px;
   margin-left: 50%;
+  z-index: 14;
   transform: translateX(-50%);
   background-image: url("../img/logo.JPG");
   background-size: cover;
   background-position: center;
 }
 
-.nav-items {
-  display: none;
+nav li {
+  padding: 10px 0;
+  transition: 0.2s;
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+nav ul {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  top: -310px;
+  padding-top: 20px;
+  z-index: 10;
   background-color: rgb(255, 255, 255);
+  transition: transform 0.2s;
+  box-shadow: 1px 1px 10px rgb(94, 94, 94);
+}
+
+.openBurgerMenu {
+  transform: translateY(310px);
+}
+
+.hide {
+  display: none;
 }
 
 /* --------------------------------------------------------------------------RWD */
 @media (min-width: 768px) {
-  .burger-icon {
+  .burger {
     display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 80px;
   }
 
   .logo-button {
     margin-left: 0;
+    transform: translateX(0);
   }
 
-  .nav-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .nav-items a {
+  nav li {
+    display: inline-block;
     padding: 0 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000000;
     transition: 0.2s;
   }
-  .nav-items a:hover {
+
+  nav ul {
+    /* padding-top: 50px; */
+    position: relative;
+    height: 78px;
+    width: auto;
+    top: 0px;
+    padding-top: 0;
+    z-index: 6;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+    transition: transform 0.2s;
+  }
+
+  nav li:hover {
     transform: scale(1.1);
   }
 }
