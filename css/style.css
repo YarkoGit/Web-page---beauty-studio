@@ -10,35 +10,127 @@ body {
 }
 
 /* --------------------------------------------------------------------- nav */
+
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: sticky;
   top: 0;
-  z-index: 10;
-  height: 60px;
+  z-index: 16;
+  height: 80px;
   background-color: #ffffff;
+  text-align: center;
+  box-shadow: 1px 1px 10px rgb(94, 94, 94);
 }
 
-.nav-menu {
+.burger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 30px;
+  line-height: 60px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s;
+  z-index: 17;
+}
+
+.logo-button {
+  height: 76px;
+  width: 80px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 50%;
+  z-index: 14;
+  transform: translateX(-50%);
+  background-image: url("../img/logo.JPG");
+  background-size: cover;
+  background-position: center;
+}
+
+nav li {
+  padding: 10px 0;
+  transition: 0.2s;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+nav ul {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  top: -310px;
+  padding-top: 20px;
+  z-index: 10;
+  background-color: rgb(255, 255, 255);
+  transition: transform 0.2s;
+  box-shadow: 1px 1px 10px rgb(94, 94, 94);
+}
+
+.openBurgerMenu {
+  transform: translateY(310px);
+}
+
+.hide {
   display: none;
 }
 
-.nav-menu li {
-  transition: 0.1s;
-}
-.nav-menu-item a {
-  font-family: "Hahmlet", serif;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(0, 0, 0);
+/* header */
+header {
+  position: relative;
+  height: 200px;
+  background-image: url("../img/manicure-870857_1920.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.nav-menu-item {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 0 40px;
-  font-size: 18px;
-  transition: 0.2s;
+/* --------------------------------------------------------------------------RWD */
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 80px;
+  }
+
+  .logo-button {
+    margin-left: 0;
+    transform: translateX(0);
+  }
+
+  nav li {
+    display: inline-block;
+    padding: 0 30px;
+    transition: 0.2s;
+  }
+
+  nav ul {
+    /* padding-top: 50px; */
+    position: relative;
+    height: 78px;
+    width: auto;
+    top: 0px;
+    padding-top: 0;
+    z-index: 6;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+    transition: transform 0.2s;
+  }
+
+  nav li:hover {
+    transform: scale(1.1);
+  }
+
+  header {
+    height: 400px;
+  }
 }
