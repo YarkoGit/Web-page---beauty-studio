@@ -79,6 +79,15 @@ nav ul {
   display: none;
 }
 
+/* header */
+header {
+  position: relative;
+  height: 200px;
+  background-image: url("../img/manicure-870857_1920.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* --------------------------------------------------------------------------RWD */
 @media (min-width: 768px) {
   .burger {
@@ -119,5 +128,9 @@ nav ul {
 
   nav li:hover {
     transform: scale(1.1);
+  }
+
+  header {
+    height: 400px;
   }
 }
