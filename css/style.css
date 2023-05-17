@@ -82,10 +82,15 @@ nav ul {
 /* header */
 header {
   position: relative;
-  height: 200px;
-  background-image: url("../img/manicure-870857_1920.jpg");
-  background-size: cover;
-  background-position: center;
+  height: 150px;
+  /* margin-top: 20px; */
+  /* width: initial; */
+  background-image: url("../img/header_bg.jpg");
+  /* background-color: #000000; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  /* box-shadow: 1px 1px 10px rgb(94, 94, 94); */
 }
 
 /* --------------------------------------------------------------------------RWD */
@@ -131,6 +136,9 @@ header {
   }
 
   header {
-    height: 400px;
+    height: 250px;
+    background-size: contain;
+    background-position: top;
+    /* background-color: #000000; */
   }
 }
