@@ -83,14 +83,10 @@ nav ul {
 header {
   position: relative;
   height: 150px;
-  /* margin-top: 20px; */
-  /* width: initial; */
   background-image: url("../img/header_bg.jpg");
-  /* background-color: #000000; */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
-  /* box-shadow: 1px 1px 10px rgb(94, 94, 94); */
 }
 
 /* --------------------------------------------------------------------------RWD */
@@ -118,7 +114,6 @@ header {
   }
 
   nav ul {
-    /* padding-top: 50px; */
     position: relative;
     height: 78px;
     width: auto;
@@ -139,6 +134,5 @@ header {
     height: 250px;
     background-size: contain;
     background-position: top;
-    /* background-color: #000000; */
   }
 }
