@@ -44,3 +44,36 @@ const hamburgerMenu = new HamburgerMenu(
 );
 
 hamburgerMenu.registerClickEvent();
+
+class HeightAdjuster {
+  constructor(elementSelector, minWidth) {
+    this.elements = document.querySelectorAll(elementSelector);
+    this.minWidth = minWidth;
+  }
+  clearStyleHeights() {
+    this.setStyleHeights("");
+  }
+  getMaxHeight() {
+    let elementsArray = Array.from(this.elements);
+    let heightsArray = elementsArray.map((element) => element.offsetHeight);
+    return Math.max(...heightsArray);
+  }
+  setStyleHeights(height) {
+    this.elements.forEach((element) => {
+      element.style.height = height;
+    });
+  }
+  adjust() {
+    this.clearStyleHeights();
+    if (window.innerWidth >= this.minWidth) {
+      let maxHeight = this.getMaxHeight();
+      this.setStyleHeights(`${maxHeight}px`);
+    }
+  }
+}
+const cardHeightAdjuster = new HeightAdjuster(".card-body", 768);
+cardHeightAdjuster.adjust();
+
+window.addEventListener("resize", () => {
+  cardHeightAdjuster.adjust();
+});
