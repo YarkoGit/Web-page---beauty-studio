@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   /* font-family: "Hahmlet", serif; */
   font-family: "Open Sans", "sans-serif";
   scroll-margin-top: 60px;
@@ -151,6 +151,7 @@ section {
 
 section p {
   text-align: justify;
+  font-size: 15px;
 }
 
 section h2 {
@@ -175,6 +176,31 @@ section h2 {
   width: 100%;
   height: 50vw;
   object-fit: cover;
+}
+
+/* footer */
+footer {
+  height: 60px;
+  line-height: 60px;
+  background-color: #e5e5e5;
+  color: #000000;
+  text-align: center;
+  font-size: 15px;
+}
+
+.icon-box {
+  margin-left: 20px;
+}
+
+.icon-box a {
+  margin: 0 5px;
+  color: #000000;
+  font-size: 25px;
+  transition: color 0.2s;
+}
+
+.icon-box a:hover {
+  color: rgb(253, 37, 134);
 }
 
 /* --------------------------------------------------------------------------RWD */
