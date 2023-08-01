@@ -24,14 +24,17 @@ class HamburgerMenu {
     this.closeIco = document.querySelector(closeIcoSelector);
     this.nav = document.querySelector(navSelector);
   }
-  click() {
+  burgerClick() {
     this.btnIco.classList.toggle("hide");
     this.closeIco.classList.toggle("hide");
     this.nav.classList.toggle("openBurgerMenu");
   }
   registerClickEvent() {
     this.burgerBtn.addEventListener("click", () => {
-      this.click();
+      this.burgerClick();
+    });
+    this.nav.addEventListener("click", () => {
+      this.burgerClick();
     });
   }
 }
