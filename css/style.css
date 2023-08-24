@@ -70,6 +70,14 @@ nav a {
   color: #000000;
 }
 
+.menu-items-hightlighted a {
+  transition: 0.5s;
+  font-size: 20px;
+  /* color: blue; */
+  /* font-weight: bold; */
+  border-bottom: 1px solid black;
+}
+
 nav ul {
   font-family: "Hahmlet", serif;
   position: absolute;
@@ -281,5 +289,8 @@ footer {
 
   .card-img-top {
     height: 10vw;
+  }
+  .menu-items-hightlighted {
+    transition: color 0.5s;
   }
 }
