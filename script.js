@@ -80,3 +80,80 @@ cardHeightAdjuster.adjust();
 window.addEventListener("resize", () => {
   cardHeightAdjuster.adjust();
 });
+
+class CurrentMenuItemHighlighter {
+  constructor(
+    navBarSelector,
+    sectionsSelector,
+    navBarItemsSelector,
+    hightlightCssClass
+  ) {
+    this.navBar = document.querySelector(navBarSelector);
+    this.sections = document.querySelectorAll(sectionsSelector);
+    this.navBarItems = document.querySelectorAll(navBarItemsSelector);
+    this.hightlightCssClass = hightlightCssClass;
+  }
+
+  getNavBarPosition() {
+    return window.pageYOffset + this.navBar.offsetHeight;
+  }
+  getSectionPosition(section) {
+    return section.offsetTop + section.offsetHeight;
+  }
+  getDistance(section) {
+    return this.getSectionPosition(section) - this.getNavBarPosition();
+  }
+  getNearestSection() {
+    let minDistance = 0;
+    let neraestSection = null;
+    this.sections.forEach((section) => {
+      let distance = this.getDistance(section);
+      if (distance >= 0) {
+        if (neraestSection === null || distance < minDistance) {
+          minDistance = distance;
+          neraestSection = section;
+        }
+      }
+    });
+    return neraestSection;
+  }
+  getNavbarItem(section) {
+    let navBarItemId = section.dataset.menuItemId;
+    return document.querySelector(`#${navBarItemId}`);
+  }
+  clearHightlightClasses() {
+    this.navBarItems.forEach((navBarItem) => {
+      navBarItem.classList.remove(this.hightlightCssClass);
+    });
+  }
+  setHightlightClass(navBarItem) {
+    navBarItem.classList.add(this.hightlightCssClass);
+  }
+  containsHightlightClass(navBarItem) {
+    return navBarItem.classList.contains(this.hightlightCssClass);
+  }
+
+  hightlightNearestSection() {
+    let nearestSection = this.getNearestSection();
+    if (nearestSection !== null) {
+      let navBarItem = this.getNavbarItem(nearestSection);
+      if (!this.containsHightlightClass(navBarItem)) {
+        this.clearHightlightClasses();
+        this.setHightlightClass(navBarItem);
+      }
+    } else {
+      this.clearHightlightClasses();
+    }
+  }
+}
+
+const currentMenuItemHighlighter = new CurrentMenuItemHighlighter(
+  ".menu-items",
+  ".menu-sections",
+  ".menu-items li",
+  "menu-items-hightlighted"
+);
+
+window.addEventListener("scroll", () => {
+  currentMenuItemHighlighter.hightlightNearestSection();
+});
